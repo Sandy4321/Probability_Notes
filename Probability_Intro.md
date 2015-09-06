@@ -34,5 +34,52 @@ Symmetry can often provide a better rationale for choosing probabilities. For ex
 
 Another approach is to perform the experiment many times and choose the probability of each outcome as the relative frequency of that outcome (i.e., the number of occurrences of that outcome divided by the total number of trials). Experience shows that the relative frequency of an outcome often approaches a limiting value with an increasing number of trials. 
 
+- Fails when we try to compute the probability of an event from among an incountably infinite sample space. Evaluated probability of each outcome becomes zero when divided by the infinite posibilities of outcomes. 
+- This can be overcome by assigning a probability density to each outcome and multiplying it with the event whose probability is to be evaluated.
+- A similar problem occurs when trying to evaluate the probability of a H or T in a sample space of infinite trials. In this case, we calculate the probability through n trials and then evaluate for the infinite case by taking its limit to 0.
+
+Before defining the axioms lets quickly go through some standard notations of set theory.
+
+**Sample space, $\Omega$** - Set of all sample points for the given experiment.
+
+**Events** - Subsets of the Sample space
+
+**Union of Sets, $\cup_{i=1}^n A_i$** - Consists of all points that exist in **any** of $A_1$, $A_2$...$A_n$.
+
+**Intersection of Sets, $\cap_{i=1}^n A_i$** - Consists of all points that exist in **all** of $A_1$, $A_2$... $A_n$.
+
 ###Axioms of Probability theory
 
+Russian Mathematician, A.N.Kolmogorov put probability theory on a firm mathematical footing in 1932 with his *Axioms of probability theory*.
+
+
+Probability models have 3 components: 
+
+- A **sample space Ω**, which is an arbitrary set of sample points; 
+
+- A collection of **events**, each of which is a subset of $\Omega$; 
+- and a **probability measure**, which assigns a probability (a number in [0, 1]) to each event. 
+
+####The Collection of events satisfies the following axioms:
+
+- $\Omega$ is an event
+
+- If $A_1$,$A_2$,... are events, then 􏰂complement $A^c$ is an event.
+- If all sample points are singleton events, then all finite and countable sets are events (i.e., they are finite and countable unions of singleton sets).
+- From **deMorgan’s law**,􏰆􏰄 $$ [\cup_n A^n]^c = \cap_n A_n^c $$so countable intersections of events are events. 
+- All combinations of intersections and unions of events are also events.
+
+
+###The probability measure on events satisfies the following axioms:- $Pr \{\Omega\} = 1$
+
+- If A is an event, then $ Pr \{A\} \geq 0$.
+- If $A_1$,$A_2$,... are disjoint events, then $$Pr \big\{\bigcup_{n=1}^n A_n \big\} = \sum_{n=1}^n Pr \big\{A_n\big\} = \lim_{m \rightarrow \infty} \sum_{n=1}^m  Pr \big\{ A_n \big\}  $$
+
+####Consequences of the above axioms
+- $Pr \{\phi\} = 0$
+
+- $Pr \{A^c\} = 1 - Pr \{A\}$
+- $Pr\{A\} \leq Pr \{B\} \leq 1$, if $A \subseteq B$
+- $Pr \big\{\bigcup_{n} A_n \big\} \leq \sum_n Pr \big\{A_n \big\}$ 
+
+where the last point can be enunciated with the example of $$Pr \{ A \cup B \} = Pr \{ A \} + Pr \{ B \} - Pr\{ A \cap B\} \leq Pr \{ A \} + Pr \{ B\}$$
